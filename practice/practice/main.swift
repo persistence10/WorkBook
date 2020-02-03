@@ -1,11 +1,10 @@
-//
+
 //  main.swift
-//  practice
+//  CalculationAge
 //
-//  Created by 박경범 on 2020/02/02.
+//  Created by 박경범 on 2020/02/03.
 //  Copyright © 2020 박경범. All rights reserved.
-
-
+//
 // 나이 계산기
 // 어린이 6~13세
 // 청소년 13세~19세
@@ -87,9 +86,20 @@ func main() {
         let conversion = try conversionStringToInt(_ : inputValue) // String->Int
         let calculation = try matchYourAge(_ : conversion) // calculation Ages
         
-    }catch {
-        
-        
+    }catch let error {
+//        let errorCode = (error as NSError).code
+//        guard let exceptionLog = ExceptionLog(rawValue: errorCode) else{
+//            return
+//        }
+//
+//        switch exceptionLog {
+//        case .invaildValue:
+//        print(ExceptionLog.invaildValue)
+//        case .failunwrapping:
+//        print(ExceptionLog.failunwrapping)
+//        case .failinputAges:
+//        print (ExceptionLog.failinputAges)
+//        }
         
      }
  }
@@ -123,6 +133,12 @@ main()
    conversionStringToInt(_ : inputValue)
    converionStringToInt(_ inputValue: inputvalue) <-- 이거는 왜 안되는지, 차이가 뭔지...??
  
+ 5.
+    catch let error {
+    let errorCode = (error as NSError).code
+    guard let exceptionLog = ExceptionLog(rawValue: errorCode) else{
+        return
+    }    위 구문 이해 못하겠음.
  
  
  
