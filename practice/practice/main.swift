@@ -59,24 +59,18 @@ func conversionStringToInt (_ inputValue: String) throws -> Int {
         }
         
         var yourAge: String = ""
-        
-        
+                
         switch conversionInt {
         case 1..<6:
             yourAge = "Ur infant"
-//            print("Ur infant")
         case 6..<14:
             yourAge = "Ur child"
-//            print("Ur Child")
         case 14..<20:
             yourAge = "Ur teenager"
-//            print("Ur teenager")
         case 20..<60:
             yourAge = "Ur adult"
-//            print("Ur adult")
         default:
             yourAge = "Ur the aged"
-//            print("Ur the aged")
         }
         
         return yourAge
@@ -108,14 +102,6 @@ func main() {
         let model = Model(yourAge: calculation)
         outputView(outputMessage: model.yourAge)
 //        let model = calculation // AgesValue return (String)
-        
-        
-        
-        
-//
-//                 let model = Model(sum: factorial(conversionInt, 1))
-//                 outputView(model.sum)
-        
         
     }catch let error {
         let errorCode = (error as NSError).code
