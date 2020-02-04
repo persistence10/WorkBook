@@ -5,18 +5,13 @@
 //  Created by 박경범 on 2020/02/03.
 //  Copyright © 2020 박경범. All rights reserved.
 //
-// 나이 계산기
-// 어린이 6~13세
-// 청소년 13세~19세
-// 어른 20~59세
-// 노인 60세 이상
+
 
 import Foundation
 
 //Model
 struct Model {
-    
-    
+    let yourAge: String
 }
 
 
@@ -84,7 +79,7 @@ func conversionStringToInt (_ inputValue: String) throws -> Int {
 //            print("Ur the aged")
         }
         
-        return String(yourAge)
+        return yourAge
     }
 
     
@@ -99,8 +94,8 @@ func inputAges() throws -> String {
     
 }
 
-func outputView() {
-    
+func outputView(outputMessage: String) {
+    print("\(outputMessage)")
 }
 
 
@@ -110,7 +105,9 @@ func main() {
         let inputValue = try inputAges() // String?->String
         let conversion = try conversionStringToInt(_: inputValue) // String->Int
         let calculation = try matchYourAge(_: conversion) // calculation Ages
-        let model = calculation // AgesValue return (String)
+        let model = Model(yourAge: calculation)
+        outputView(outputMessage: model.yourAge)
+//        let model = calculation // AgesValue return (String)
         
         
         
